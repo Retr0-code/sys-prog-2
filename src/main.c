@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
         {"errors",      optional_argument,  NULL, 'e'},
         {NULL,          0,                  NULL,  0 }
     };
-    static const char *arguments_short = "hul:e:";
+    static const char *arguments_short = "hupl:e:";
     int opt = 0, option_index = 0;
 
     function_t functions[3];
@@ -63,6 +63,8 @@ int main(int argc, char **argv) {
                 }
                 break;
             default:
+                fprintf(err, "Error parsing arguments\n");
+                exit(-1);
                 break;
         }
     }
